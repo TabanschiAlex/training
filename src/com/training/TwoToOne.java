@@ -10,15 +10,14 @@ public class TwoToOne {
     }
 
     public static String longest(String s1, String s2) {
-        Set<Character> characterSet = new HashSet<Character>();
+        Set<Character> characterSet = new HashSet<>();
         String str = s1 + s2;
         char[] chars = str.toCharArray();
-
 
         for (char aChar : chars) {
             characterSet.add(aChar);
         }
 
-        return characterSet.stream().map(String::valueOf).collect(Collectors.joining());
+        return characterSet.stream().map(String::valueOf).sorted().collect(Collectors.joining());
     }
 }
